@@ -1,7 +1,7 @@
 require('dotenv').config({ path: require('path').join(__dirname,'.env') });
 const express = require('express');
 const path = require('path');
-const db = require('./config/db');
+const db = require("./db");
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
 app.disable('x-powered-by');
