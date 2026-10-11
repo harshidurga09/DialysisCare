@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#f4f8fc">
+  <meta name="description" content="DialysisCare AI helps organize kidney health information and prepare for care-team conversations.">
+
+  <title>DialysisCare AI | Kidney Health Copilot</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="registration" href="registration.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+<body>
+
+  <div class="layout">
+
+    <aside class="sidebar" id="sidebar">
+
+      <a class="brand" href="#">
+
+        <div class="brand-icon"><i data-lucide="heart-pulse"></i></div>
+
+        <div><strong>DialysisCare <span>AI</span></strong><small>Kidney care, simplified</small></div>
+
+        <button class="icon-btn close-menu" id="closeMenu" aria-label="Close menu"><i data-lucide="x"></i></button>
+
+      </a>
+
+      <p class="nav-label">YOUR HEALTH</p>
+
+      <nav class="navigation">
+
+        <a href="#overview" class="nav-link active" data-section="overview"><i data-lucide="layout-dashboard"></i> Overview</a>
+
+        <a href="#schedule" class="nav-link" data-section="schedule"><i data-lucide="calendar-days"></i> Dialysis schedule</a>
+
+        <a href="#records" class="nav-link" data-section="records"><i data-lucide="file-text"></i> Health records</a>
+
+        <a href="#medications" class="nav-link" data-section="medications"><i data-lucide="pill"></i> Medications</a>
+
+        <a href="#copilot" class="nav-link" data-section="copilot"><i data-lucide="brain-circuit"></i> AI Health Copilot</a>
+
+      </nav>
+
+<button id="start-btn" class="nav-link">🎙️ Start Listening</button>
+
+      <div class="sidebar-help">
+
+        <div class="help-icon"><i data-lucide="shield-check"></i></div>
+
+        <h3>Your health, your journey.</h3>
+
+        <p>Keep your health information organized and prepare for your next appointment.</p>
+
+        <button class="link-btn" id="sidebarAsk">Talk to your copilot <i data-lucide="arrow-up-right"></i></button>
+
+      </div>
+
+      <div class="profile">
+
+        <div class="avatar">P</div>
+
+        <div class="profile-info"><strong>Patient Demo</strong><small>Personal health space</small></div>
+
+        <i data-lucide="shield-check" class="profile-shield"></i>
+
+      </div>
+
+    </aside>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <main class="main">
+
+      <header class="topbar">
+
+        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu"><i data-lucide="menu"></i></button>
+
+        <div class="breadcrumbs">Workspace <i data-lucide="chevron-right"></i> <strong id="breadcrumb">Overview</strong></div>
+
+        <div class="top-actions">
+
+          <span class="privacy"><i data-lucide="shield-check"></i> Demo health space</span>
+
+          <button class="icon-btn" id="notifications" aria-label="Notifications"><i data-lucide="bell"></i></button>
+
+        </div>
+
+      </header>
+
+      <div class="content" id="overview">
+
+        <section class="welcome">
+
+          <div>
+
+            <div class="eyebrow"><i data-lucide="sparkles"></i> YOUR PERSONAL HEALTH COPILOT</div>
+
+            <h1>Your kidney care,<br><span>all in one place.</span></h1>
+
+            <p class="subtitle">Stay informed, stay organized, and feel more prepared for every dialysis session.</p>
+
+          </div>
+
+          <button class="btn btn-primary" id="uploadTop"><i data-lucide="upload"></i> Upload a report</button>
+
+        </section>
+
+        <div class="notice hidden" id="notice" role="status">
+
+          <i data-lucide="info"></i><span id="noticeText"></span>
+
+          <button class="icon-btn" id="dismissNotice" aria-label="Dismiss"><i data-lucide="x"></i></button>
+
+        </div>
+
+        <section class="hero">
+
+          <div class="hero-copy">
+
+            <div class="hero-tag"><span></span> YOUR CARE COMPANION</div>
+
+            <h2>Small steps.<br>Better-informed care.</h2>
+
+            <p>Understand your health information and prepare for conversations with your kidney care team.</p>
+
+            <button class="btn hero-btn" id="heroAsk"><i data-lucide="message-circle"></i> Ask your AI copilot <i data-lucide="arrow-right"></i></button>
+
+            <div class="hero-foot"><i data-lucide="shield-check"></i> Supportive information, not a medical diagnosis</div>
+
+          </div>
+
+          <div class="hero-art" aria-hidden="true">
+
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+
+            <div class="heart-art"><i data-lucide="heart-pulse"></i></div>
+
+            <div class="float-card float-one"><i data-lucide="activity"></i><div><small>Health insights</small><strong>Made easier</strong></div></div>
+
+            <div class="float-card float-two"><i data-lucide="calendar-check"></i><div><small>Your next step</small><strong>Stay prepared</strong></div></div>
+
+          </div>
+
+        </section>
+
+        <section class="section-heading">
+
+          <div><h2>Your health snapshot</h2><p>Sample measurements for the demo dashboard.</p></div>
+
+          <button class="text-btn" id="viewRecords">View records <i data-lucide="arrow-right"></i></button>
+
+        </section>
+
+        <section class="metrics-grid">
+
+          <article class="metric-card">
+
+            <div class="metric-top"><div class="metric-icon blue"><i data-lucide="heart-pulse"></i></div><span class="demo-label">SAMPLE</span></div>
+
+            <p>Blood pressure</p><div class="metric-value">138/86 <small>mmHg</small></div>
+
+            <div class="metric-note">Review with your care team</div>
+
+          </article>
+
+          <article class="metric-card">
+
+            <div class="metric-top"><div class="metric-icon purple"><i data-lucide="weight"></i></div><span class="demo-label">SAMPLE</span></div>
+
+            <p>Weight</p><div class="metric-value">68.4 <small>kg</small></div>
+
+            <div class="metric-note">Compare with prescribed dry weight</div>
+
+          </article>
+
+          <article class="metric-card">
+
+            <div class="metric-top"><div class="metric-icon cyan"><i data-lucide="droplets"></i></div><span class="demo-label">SAMPLE</span></div>
+
+            <p>Fluid intake</p><div class="metric-value">900 <small>mL</small></div>
+
+            <div class="metric-note">Example daily record</div>
+
+          </article>
+
+          <article class="metric-card">
+
+            <div class="metric-top"><div class="metric-icon orange"><i data-lucide="activity"></i></div><span class="demo-label">SAMPLE</span></div>
+
+            <p>Last potassium</p><div class="metric-value">5.1 <small>mEq/L</small></div>
+
+            <div class="metric-note">Sample result · clinician review</div>
+
+          </article>
+
+        </section>
+
+        <div class="dashboard-grid">
+
+          <section class="panel" id="schedule">
+
+            <div class="panel-heading">
+
+              <div class="panel-icon blue"><i data-lucide="calendar-days"></i></div>
+
+              <div><h3>Dialysis planner</h3><p>Keep your treatment details handy</p></div>
+
+            </div>
+
+            <div class="session-card">
+
+              <div class="session-label"><i data-lucide="calendar-clock"></i> YOUR NEXT SESSION</div>
+
+              <h3>Stay ready for your next visit</h3>
+
+              <p>Check the date, time, and duration confirmed by your dialysis center.</p>
+
+              <div class="session-detail"><i data-lucide="clock"></i> Follow your clinic's confirmed appointment time</div>
+
+            </div>
+
+            <button class="btn btn-outline full-btn" id="manageSchedule"><i data-lucide="calendar"></i> Manage schedule</button>
+
+          </section>
+
+          <section class="panel copilot-panel" id="copilot">
+
+            <div class="panel-heading">
+
+              <div class="panel-icon purple"><i data-lucide="brain-circuit"></i></div>
+
+              <div><h3>Ask your copilot</h3><p>Start with a question</p></div>
+
+              <span class="status-dot"></span>
+
+            </div>
+
+            <div class="chat-preview">
+
+              <div class="bot-avatar"><i data-lucide="sparkles"></i></div>
+
+              <div class="bot-bubble">Hi there! Need help understanding kidney health information? Let's work through your questions together.</div>
+
+            </div>
+
+            <div class="quick-questions">
+
+              <button class="quick-question">Help me prepare for dialysis <i data-lucide="chevron-right"></i></button>
+
+              <button class="quick-question">Explain my lab results <i data-lucide="chevron-right"></i></button>
+
+              <button class="quick-question">What should I ask my doctor? <i data-lucide="chevron-right"></i></button>
+
+            </div>
+
+            <button class="btn btn-primary full-btn" id="openChat"><i data-lucide="message-circle"></i> Open AI assistant</button>
+
+          </section>
+
+        </div>
+
+        <div class="dashboard-grid lower-grid">
+
+          <section class="panel" id="medications">
+
+            <div class="panel-heading">
+
+              <div class="panel-icon orange"><i data-lucide="pill"></i></div>
+
+              <div><h3>Medication organizer</h3><p>Keep your prescribed medicines together</p></div>
+
+            </div>
+
+            <div class="empty-state">
+
+              <div class="empty-icon"><i data-lucide="clipboard-list"></i></div>
+
+              <h3>Your medication list</h3>
+
+              <p>Add your current prescriptions to keep them organized. No medication schedule has been configured in this demo.</p>
+
+              <button class="btn btn-outline" id="viewMeds">View medication list <i data-lucide="arrow-right"></i></button>
+
+            </div>
+
+          </section>
+
+          <section class="panel" id="records">
+
+            <div class="panel-heading">
+
+              <div class="panel-icon cyan"><i data-lucide="file-text"></i></div>
+
+              <div><h3>Health records</h3><p>Your reports in one place</p></div>
+
+            </div>
+
+            <div class="record-row">
+
+              <div class="record-icon"><i data-lucide="file-text"></i></div>
+
+              <div><strong>Lab reports & test results</strong><p>Organize your health documents</p></div>
+
+              <button class="icon-btn upload-open" aria-label="Upload lab report"><i data-lucide="chevron-right"></i></button>
+
+            </div>
+
+            <div class="record-row">
+
+              <div class="record-icon"><i data-lucide="trending-up"></i></div>
+
+              <div><strong>Health trends</strong><p>Review measurements over time</p></div>
+
+              <button class="icon-btn" id="viewTrends" aria-label="View trends"><i data-lucide="chevron-right"></i></button>
+
+            </div>
+
+            <button class="btn btn-outline full-btn upload-open"><i data-lucide="upload"></i> Add a health report</button>
+
+          </section>
+
+        </div>
+
+        <footer class="footer">
+
+          <div><i data-lucide="heart-pulse"></i> <strong>DialysisCare AI</strong> · Built for informed kidney care</div>
+
+          <div>Demo data · Not a substitute for professional medical advice</div>
+
+        </footer>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- AI CHAT MODAL -->
+
+  <div class="modal-backdrop hidden" id="chatModal">
+
+    <section class="modal chat-modal" role="dialog" aria-modal="true" aria-labelledby="chatTitle">
+
+      <header class="modal-header">
+
+        <div class="chat-brand"><div class="bot-avatar"><i data-lucide="brain-circuit"></i></div><div><h2 id="chatTitle">AI Health Copilot</h2><small>Kidney care assistant · Demo</small></div></div>
+
+        <button class="icon-btn close-modal" aria-label="Close chat"><i data-lucide="x"></i></button>
+
+      </header>
+
+      <div class="chat-disclaimer"><i data-lucide="shield-check"></i> General information only. Not for emergencies or treatment decisions.</div>
+
+      <div class="messages" id="messages" aria-live="polite">
+
+        <div class="message assistant"><div class="message-avatar"><i data-lucide="sparkles"></i></div><div class="message-text">Hello! I can help you organize your kidney health questions, understand common medical terms, and prepare for your care team visit. What would you like to know?</div></div>
+
+      </div>
+
+      <div class="modal-suggestions" id="modalSuggestions">
+
+        <button>Help me prepare for dialysis</button>
+
+        <button>Explain my lab results</button>
+
+        <button>Questions for my doctor</button>
+
+      </div>
+
+      <form class="chat-input" id="chatForm">
+
+        <input id="chatInput" type="text" placeholder="Ask about kidney health..." autocomplete="off" required>
+
+        <button class="send-btn" type="submit" aria-label="Send message"><i data-lucide="send"></i></button>
+
+      </form>
+
+      <p class="chat-foot">This prototype uses predefined demo responses, not a connected medical AI model.</p>
+
+    </section>
+
+  </div>
+
+  <!-- REPORT UPLOAD MODAL -->
+
+  <div class="modal-backdrop hidden" id="uploadModal">
+
+    <section class="modal upload-modal" role="dialog" aria-modal="true" aria-labelledby="uploadTitle">
+
+      <header class="modal-header">
+
+        <div><h2 id="uploadTitle">Add a health report</h2><p>Keep your kidney health documents organized.</p></div>
+
+        <button class="icon-btn close-modal" aria-label="Close upload"><i data-lucide="x"></i></button>
+
+      </header>
+
+      <label class="upload-drop" for="reportFile">
+
+        <i data-lucide="cloud-upload"></i>
+
+        <strong id="fileLabel">Choose a report from your device</strong>
+
+        <span>PDF, PNG or JPG · Demo only</span>
+
+        <input type="file" id="reportFile" accept=".pdf,.png,.jpg,.jpeg,application/pdf,image/png,image/jpeg">
+
+      </label>
+
+      <p class="upload-warning"><i data-lucide="shield-alert"></i> This demo does not upload or securely store files. Avoid selecting real medical records until secure storage is implemented.</p>
+
+      <button class="btn btn-primary full-btn" id="finishUpload">Done</button>
+
+    </section>
+
+  </div>
+
+  <!-- GENERAL INFORMATION MODAL -->
+
+  <div class="modal-backdrop hidden" id="infoModal">
+
+    <section class="modal info-modal" role="dialog" aria-modal="true" aria-labelledby="infoTitle">
+
+      <header class="modal-header">
+
+        <div><h2 id="infoTitle">Information</h2><p id="infoSubtitle"></p></div>
+
+        <button class="icon-btn close-modal" aria-label="Close"><i data-lucide="x"></i></button>
+
+      </header>
+
+      <div id="infoBody" class="info-body"></div>
+
+      <button class="btn btn-primary full-btn close-info">Got it</button>
+
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+
+  <script>lucide.createIcons();</script>
+
+</body>
+
+</html>
